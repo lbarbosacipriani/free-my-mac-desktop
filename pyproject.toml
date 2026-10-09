@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "free-my-mac-desktop"
+version = "0.1.0"
+description = "Native-first macOS cleanup assistant with conservative scan, quarantine, and restore workflow."
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+[project.scripts]
+free-my-mac = "mac_safe_cleaner.cli:main"
+free-my-mac-web = "mac_safe_cleaner.web:main"
+mac-safe-cleaner = "mac_safe_cleaner.cli:main"
+mac-safe-cleaner-web = "mac_safe_cleaner.web:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
